@@ -1,0 +1,24 @@
+.wrapper {
+  max-width: 70rem; /* 1120px = 70 * 16px  */
+  margin: 2rem auto; /*Nas laterais fica como auto, pra centralizar na tela*/
+  padding: 0 1rem; /*Se diminuir o tamanho da tela abaixo dos 70rem fica com um espaçamento lateral de 16px pra não ficar coladinho os componentes*/;
+
+  display: grid;
+  grid-template-columns: 256px 1fr; /*A sidebar com largura fixa de 256px e o feed com largura flexível.  Para grids usamos a unidade fr*/
+  gap: 2rem; /*Espaçamento entre as colunas*/
+  align-items: flex-start; /*Alinhando os itens no topo*/
+}
+
+/*Aplicamos a regra de media query para quando a tela for menor que 768px (dispositivos móveis)*/
+@media (max-width: 768px) {
+  html {
+    font-size: 87.5%;
+  }
+  .wrapper {
+    grid-template-columns: 1fr; /*Quando a tela for menor que 768px, a sidebar passa a ficar acima do feed, ocupando todo o espaço.*/
+  }
+}
+
+/*Regra de 3 simples para o font-size:
+se 16px => 100%, quanto seria 14px => ?
+14 * 100 / 16 = 87.5%*/

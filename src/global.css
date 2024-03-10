@@ -1,0 +1,40 @@
+:root {
+  /* Criando variáveis css para as cores que iremos utilizar */
+  --white: #ffffff;
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --green-300: #00B37E;
+  --green-500: #00875f;
+
+  --red-500: #F75A68;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow:  0 0 0 2px var(--green-500);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /*Utilizando as variáveis de cor que definimos em root*/
+  background: var(--gray-900);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased; /*deixa as fontes mais 'fininhas', mais nítidas em navegadores que suportam.  Importante usar, principalmente quando não estamos usando fontes padrões do sistema*/
+}
+
+body, input, textarea, button { /*Colocamos estes elementos, pois por padrão eles não herdam as customizações do body, possuem as suas próprias*/
+  font-family: 'Roboto', sans-serif; /*Vai utilizar a font Roboto e caso a mesma não seja carregada, carrega a sans-serif que é na verdade a padrão de cada sistema operacional*/
+  font-weight: 400;
+  font-size: 1rem; /*Sempre lembrar de usar medidas relativas, pois melhora a acessibilidade da nossa aplicação*/
+}
